@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+.navbar {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+
+.btn-success { background: #27ae60; }
+.btn-danger { background: #e74c3c; }
+.btn-remove { background: #95a5a6; }
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.dashboard-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: #ecf0f1;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+.count {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+    margin: 0.5rem 0;
+}
+
+.image-grid {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.drug-item {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.drug-item input {
+    flex: 1;
+}
+
+.quote-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.quote-table th, .quote-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.total-row {
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+.status-pending { color: #f39c12; }
+.status-accepted { color: #27ae60; }
+.status-rejected { color: #e74c3c; }
+
+.error {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+}
+
+.success {
+    background: #27ae60;
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+}
+
+.action-buttons {
+    margin-top: 1rem;
+}
+
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .quotation-layout {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Left Side - Images */
+        .images-column {
+            flex: 1;
+        }
+        
+        .image-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #3498db;
+        }
+        
+        /* Right Side - Quotation (EXACT IMAGE LAYOUT) */
+        .quotation-column {
+            flex: 1;
+        }
+        
+        .quotation-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+        }
+        
+        .quotation-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Drug List Section */
+        .drug-list {
+            margin-bottom: 25px;
+        }
+        
+        .drug-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .drug-column {
+            flex: 1;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .column-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 14px;
+            height: 20px;
+        }
+        
+        .column-value {
+            color: #34495e;
+            font-size: 14px;
+            min-height: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .action-column {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .action-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 14px;
+            height: 20px;
+            visibility: hidden; /* Hide the label but maintain space */
+        }
+        
+        .total-row {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Add Section */
+        .add-section {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .add-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .add-label {
+            font-weight: bold;
+            color: #2c3e50;
+            width: 80px;
+            font-size: 14px;
+        }
+        
+        .add-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .add-button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .send-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .remove-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .prescription-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 14px;
+        }
+        
+        .thumbnail-container {
+            text-align: center;
+        }
+        
+        .thumbnail-label {
+            font-size: 12px;
+            margin-top: 2px;
+            color: #2c3e50;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .quotation-layout {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        /* Left Side - Images */
+        .images-column {
+            flex: 1;
+        }
+        
+        .image-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            cursor: zoom-in;
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #3498db;
+        }
+        
+        /* Right Side - Quotation (EXACT IMAGE LAYOUT) */
+        .quotation-column {
+            flex: 1;
+        }
+        
+        .quotation-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e0e0;
+        }
+        
+        .quotation-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Drug List Section */
+        .drug-list {
+            margin-bottom: 25px;
+        }
+        
+        .drug-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .drug-column {
+            flex: 1;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .column-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 14px;
+            height: 20px;
+        }
+        
+        .column-value {
+            color: #34495e;
+            font-size: 14px;
+            min-height: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .action-column {
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .action-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 14px;
+            height: 20px;
+            visibility: hidden; /* Hide the label but maintain space */
+        }
+        
+        .total-row {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Add Section */
+        .add-section {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .add-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .add-label {
+            font-weight: bold;
+            color: #2c3e50;
+            width: 80px;
+            font-size: 14px;
+        }
+        
+        .add-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .add-button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .send-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .remove-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .prescription-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 14px;
+        }
+        
+        .thumbnail-container {
+            text-align: center;
+        }
+        
+        .thumbnail-label {
+            font-size: 12px;
+            margin-top: 2px;
+            color: #2c3e50;
+        }
+        
+        /* Image Popup Styles */
+        .image-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            cursor: zoom-out;
+        }
+        
+        .popup-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }

@@ -1,0 +1,10 @@
+TO: deshanw77@gmail.com
+SUBJECT: Your Prescription Quotation is Ready
+MESSAGE: Hello Wijethunga,
+
+Your prescription quotation (ID: 1) has been prepared.
+Please log in to your MedSystem account to review and respond.
+
+Thank you,
+MedSystem Pharmacy Team
+

@@ -1,0 +1,221 @@
+💊 Prescription Management System
+No of hours spent: Around 24 hours
+
+📋 Project Setup Instructions
+🚀 Local Setup Guide
+1. Extract the Zip File
+Extract the downloaded zip file to your web server directory (e.g., htdocs for XAMPP or www for WAMP)
+
+2. Database Setup
+Create a new MySQL database named prescription_system
+
+Import the SQL file (if provided) or run the database creation script
+
+Update database credentials in config/database.php or similar configuration file
+
+3. Server Requirements
+PHP 7.4 or higher
+
+MySQL 5.7 or higher
+
+Web server (Apache/Nginx)
+
+File uploads enabled in PHP
+
+4. Configuration
+Ensure the uploads/ directory has write permissions (for prescription images)
+
+Ensure the emails/ directory has write permissions (for email logging)
+
+Check if PHP extensions are enabled: mysqli, pdo_mysql, gd (for image handling)
+
+🔑 Login URLs and Access
+Main Login Page
+text
+http://localhost/Xiteb-Assignment/medical-prescription-system/login.php
+Patient Login
+URL: http://localhost/Xiteb-Assignment/medical-prescription-system/login.php
+
+Default Test Patient Credentials:
+
+Email: patient@example.com
+
+Password: password123
+
+Dashboard: http://localhost/prescription-system/dashboard.php
+
+Pharmacy Login
+URL: http://localhost/Xiteb-Assignment/medical-prescription-system/admin/login.php
+
+Default Test Pharmacy Credentials:
+
+**Email: pharmacy@example.com
+**Password: password123
+
+Credentials: Check database or setup documentation
+
+👥 User Roles & Access
+Patients (Default Users)
+Registration: http://localhost/Xiteb-Assignment/medical-prescription-system/register.php
+
+Can:
+
+Upload medical prescriptions with images/files
+
+Add delivery address and time preferences
+
+View pharmacy quotations
+
+Accept/reject quotations
+
+Receive email notifications
+
+Pharmacies
+Registration: http://localhost/Xiteb-Assignment/medical-prescription-system/register.php
+
+Note: User type must be changed to 'pharmacy' in database after registration
+
+Can:
+
+View all patient prescriptions
+
+Create detailed quotations with drug lists
+
+Send quotations to patients
+
+Receive acceptance/rejection notifications
+
+🔄 Complete Workflow
+Patient Registration/Login
+
+Access: http://localhost/Xiteb-Assignment/medical-prescription-system/register.php or login page
+
+Upload prescription via patient dashboard
+
+Pharmacy Login
+
+Login with pharmacy credentials
+
+View pending prescriptions in pharmacy dashboard
+
+Create and send quotations
+
+Patient Decision
+
+Patient receives notification/email
+
+Accepts/rejects quotation in their dashboard
+
+Pharmacy gets status update
+
+📧 Email System (File-Based Logging)
+Current Implementation:
+Instead of sending actual emails, the system writes email content to text files
+
+All emails are saved in the emails/ directory
+
+Each email is logged with timestamp and recipient information
+
+Email Log Location:
+text
+prescription-system/emails/
+├── patient_quotation_20241201_143022.txt
+├── pharmacy_accepted_20241201_143125.txt
+└── pharmacy_rejected_20241201_143130.txt
+Email Structure Example:
+text
+To: patient@example.com
+Subject: New Quotation Received
+Date: 2024-12-01 14:30:22
+
+Dear Patient,
+
+You have received a new quotation from City Pharmacy for your prescription.
+Total Amount: $45.50
+
+Please log in to view details and accept/reject the quotation.
+
+Thank you,
+Prescription Management System
+Potential Enhancement (PHPMailer):
+This system currently uses file-based logging, but could be enhanced with PHPMailer for actual email delivery:
+
+php
+// Example of potential PHPMailer integration
+$mail = new PHPMailer();
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'your-email@gmail.com';
+$mail->Password = 'your-app-password';
+$mail->SMTPSecure = 'tls';
+$mail->Port = 587;
+⚙️ Important Files Structure
+text
+prescription-system/
+├── config/
+│   └── database.php
+├── uploads/           # Prescription images storage
+├── emails.txt            # Email log files storage
+├── dashboard.php
+├── includes/          # Common functions
+├── login.php
+├── register.php
+└── index.php
+
+🐛 Troubleshooting
+Common Issues:
+Login not working: Check database connection in config file
+
+Images not uploading: Verify uploads/ folder permissions (755 or 777)
+
+Email logs not creating: Verify emails/ folder permissions (755 or 777)
+
+Page errors: Ensure all PHP extensions are enabled
+
+Database Connection Check:
+Edit config/database.php with your local MySQL credentials:
+
+php
+$host = 'localhost';
+$dbname = 'prescription_system';
+$username = 'root';
+$password = '';
+Folder Permissions Setup:
+bash
+# On Linux/Mac systems
+chmod 755 uploads/
+chmod 755 emails/
+
+# On Windows - ensure IIS/IUSR has write permissions
+🔔 Notification System
+Red dot indicator on pharmacy dashboard for new updates
+
+Bell icon shows recent activities
+
+Email notifications are logged to files in emails/ directory
+
+Check the emails/ folder to view all sent notifications
+
+
+📊 Checking Email Logs
+To verify the email system is working:
+
+Navigate to the emails/ directory
+
+Open any .txt file to view the email content
+
+New files are created for each email notification
+
+Files are timestamped for easy tracking
+
+🚀 Getting Started
+Complete the setup steps above
+
+Access http://localhost/Xiteb-Assignment/medical-prescription-system/login.php
+
+Use the test credentials to login as patient or pharmacy
+
+Test the prescription upload and quotation workflow
+
+Check the emails/ directory to verify notification logging
